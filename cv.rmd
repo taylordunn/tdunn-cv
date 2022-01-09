@@ -46,14 +46,14 @@ Aside
 ================================================================================
 
 <!-- Swap image with your preferred logo -->
-<!-- ![logo](https://cran.r-project.org/Rlogo.svg){width=100%} -->
+![logo](https://cran.r-project.org/Rlogo.svg){width=100%}
 
 
 ```{r}
 if(params$pdf_mode){
   cat("View this CV online with links at _tdunn.ca/cv_")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/taylordunn/tdunn-cv/raw/main/tdunn-cv.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/taylordunn/tdunn-cv/raw/main/cv.pdf)")
 }
 ```
 
