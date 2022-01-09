@@ -46,7 +46,7 @@ Aside
 ================================================================================
 
 <!-- Swap image with your preferred logo -->
-![logo](https://cran.r-project.org/Rlogo.svg){width=100%}
+<!-- ![logo](https://cran.r-project.org/Rlogo.svg){width=100%} -->
 
 
 ```{r}
