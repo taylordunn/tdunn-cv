@@ -4,6 +4,6 @@
 .httr-oauth
 .DS_Store
 desktop.ini
-.docx
-.mp4
+*.docx
+*.mp4
 job-posting/
