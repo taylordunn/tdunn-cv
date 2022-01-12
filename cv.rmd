@@ -5,6 +5,8 @@ date: "`r Sys.Date()`"
 params:
   pdf_mode:
     value: true
+  resume_mode:
+    value: false
 output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
@@ -23,7 +25,7 @@ source("cv_printing_functions.r")
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
   data_location = "https://docs.google.com/spreadsheets/d/1TeGj9u65lTVJU4XvWwvyxkMo3RUuwpkithV-7rIuqZo",  
-  pdf_mode = params$pdf_mode
+  pdf_mode = params$pdf_mode, resume_mode = params$resume_mode
 )
 
 ```
@@ -120,19 +122,34 @@ CV %<>% print_section('experience')
 <br>
 
 
-Selected Data Science Writing {data-icon=chart-line}
+Selected Data Science Projects {data-icon=chart-line}
 --------------------------------------------------------------------------------
 
-::: aside
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('data_science_projects_aside') -->
+<!-- ``` -->
+<!-- ::: -->
+
 ```{r}
-CV %<>% print_text_block('data_science_writing_aside')
+CV %<>% print_section('data_science_projects')
 ```
-:::
+
+
+
+
+Selected Data Science Writing {data-icon=pencil-alt}
+--------------------------------------------------------------------------------
+
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('data_science_writings_aside') -->
+<!-- ``` -->
+<!-- ::: -->
 
 ```{r}
 CV %<>% print_section('data_science_writings')
 ```
-
 
 
 
@@ -149,7 +166,7 @@ CV %<>% print_section('academic_articles')
 ```
 
 
-Presentations and Posters {data-icon=book}
+Selected Presentations {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ```{r}
