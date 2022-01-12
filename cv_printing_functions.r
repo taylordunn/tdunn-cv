@@ -6,16 +6,17 @@
 #'
 #' @param data_location Path of the spreadsheets holding all your data. This can be
 #'   either a URL to a google sheet with multiple sheets containing the four
-#'   data types or a path to a folder containing four `.csv`s with the neccesary
+#'   data types or a path to a folder containing four `.csv`s with the necessary
 #'   data.
 #' @param source_location Where is the code to build your CV hosted?
 #' @param pdf_mode Is the output being rendered into a pdf? Aka do links need
 #'   to be stripped?
 #' @param sheet_is_publicly_readable If you're using google sheets for data,
 #'   is the sheet publicly available? (Makes authorization easier.)
+#' @param resume_mode Is a short resume-style document being generated?
 #' @return A new `CV_Printer` object.
 create_CV_object <-  function(data_location,
-                              pdf_mode = FALSE,
+                              pdf_mode = FALSE, resume_mode = FALSE,
                               sheet_is_publicly_readable = TRUE) {
 
   cv <- list(
@@ -52,6 +53,9 @@ create_CV_object <-  function(data_location,
     cv$contact_info <- readr::read_csv(paste0(data_location, "contact_info.csv"), skip = 1)
   }
 
+  if (resume_mode) {
+    cv$entries_data %<>% dplyr::filter(as.logical(in_resume))
+  }
 
   extract_year <- function(dates){
     date_year <- stringr::str_extract(dates, "(20|19)[0-9]{2}")

@@ -178,7 +178,9 @@ Honours and Awards {data-icon=award}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('awards')
+if (sum(CV$entries_data$section == "awards") > 0) {
+  CV %<>% print_section('awards')
+}
 ```
 
 

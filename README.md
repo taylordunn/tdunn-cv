@@ -18,3 +18,7 @@ issue](https://github.com/nstrayer/datadrivencv/issues/57). Installing
 ``` r
 remotes::install_github("nstrayer/datadrivencv#60")
 ```
+
+Added a `resume_mode` option to `create_CV_object` in order to produce a
+shorter resume document. See [this
+issue](https://github.com/nstrayer/datadrivencv/issues/30).
