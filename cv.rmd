@@ -135,8 +135,8 @@ Selected Data Science Projects {data-icon=chart-line}
 CV %<>% print_section('data_science_projects')
 ```
 
-
-
+<br>
+<br>
 
 Selected Data Science Writing {data-icon=pencil-alt}
 --------------------------------------------------------------------------------
@@ -151,12 +151,8 @@ Selected Data Science Writing {data-icon=pencil-alt}
 CV %<>% print_section('data_science_writings')
 ```
 
-
-
 <br>
 <br>
-
-
 
 Publications {data-icon=book}
 --------------------------------------------------------------------------------
@@ -165,6 +161,8 @@ Publications {data-icon=book}
 CV %<>% print_section('academic_articles')
 ```
 
+<br>
+<br>
 
 Selected Presentations {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
