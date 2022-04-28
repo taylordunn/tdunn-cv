@@ -2,18 +2,19 @@
 name: Taylor
 surname: Dunn
 #position: "Professor"
-address: "Halifax, NS"
+address: "Halifax, Nova Scotia"
 #phone: +1 902 940 2210
 www: tdunn.ca
 email: "t.dunn19@gmail.com"
 #twitter: TDunn12
-headcolor: 779ecb
+headcolor: 779ECB
 github: taylordunn
 linkedin: dunn-taylor
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
   vitae::awesomecv:
     page_total: false
+    show_footer: false
 ---
 
 ```{r setup, include=FALSE}
@@ -21,98 +22,109 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 library(dplyr)
 library(tibble)
-```
-
-# Some stuff about me
-
-* I am a data scientist and statistician with five years of experience in the pharmaceutical industry, and an academic background in computational physics.
-* I enjoy working in collaborative environments on hard problems with modern technologies and methods.
-
-# Education
-
-```{r}
-tribble(
-  ~Degree, ~Year, ~Institution, ~Where,
-  "MSc Physics", "2014-2016", "Dalhousie University", "Halifax, NS",
-  "BSc Physics, Honours", "2009-2014", "University of Prince Edward Island", "Charlottetown, PE"
-) %>% 
-  detailed_entries(Degree, Year, Institution, Where)
+library(knitr)
+library(kableExtra)
 ```
 
 # Experience
 
 ```{r}
 tribble(
-  ~Year, ~Position, ~Description,
-  c("2017-"), "Biostatistician", "Worked on global clincal trials and patient-centered research across multiple disease areas.",
-  c("2015-2016"), "Teaching Assistant", "Course: Introduction to Numerical Programming"
+  ~ year, ~ position, ~ company, ~ location, ~ details,
+  "2017-", "Biostatistician", "Ardea Outcomes", "Halifax, NS",
+  c("Worked on global clincal trials and real-world evidence studies in multiple disease areas. Duties included:
+    \\begin{itemize}
+      \\item Study planning: protocols, statistical analysis plans, data management plans, literature reviews.
+      \\item Data management: reporting, transfers, database maintenance, monitoring, queries.
+      \\item Statistical analysis, interpretation, and presentation of results.
+      \\item Project management and communication with industry clients.
+    \\end{itemize}",
+    "Conducted patient-centric research, resulting in several peer-reviewed publications and presentations. Examples:
+    \\begin{itemize}
+      \\item Developed a machine learning model to predict patient dementia stage, achieving 83\\% balanced accuracy. (\\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2020/11/e20840}{Paper 1}}, \\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2022/1/e29219}{paper 2}}.)
+      \\item Used data simulations to investigate statistical properties of the Goal Attainment Scaling outcome measure. (\\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/isoqol2021-gas-sim}{Project 1}}, \\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/ispor-europe2021-gas-sim}{project 2}}.)
+      \\item Analyzed neuropsychiatric symptoms reported by over 4000 online users tracking dementia symptoms. (\\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2019/6/e13360/}{Paper}}.)
+      \\item Presented public webinars on patient-centric outcomes. (\\textcolor{tdunn-blue}{\\href{https://xtalks.com/webinars/using-goal-attainment-scaling-to-capture-the-patient-voice/}{Xtalks}}, \\textcolor{tdunn-blue}{\\href{https://ardeaoutcomes.com/news/2020/11/ardea-outcomes-launches-goal-attainment-scaling-insights-webinar-series/}{WorkCast}}.)
+    \\end{itemize}",
+    "Built the R code infrastructure for many data management activities, saving analysts several hours per week in each project:
+    \\begin{itemize}
+      \\item Developed internal R package for interfacing with AWS database and transforming raw clinical trials data into clean tabular data sets.
+      \\item Developed internal R package for company-branded figures and RMarkdown reporting templates.
+      \\item Developed open-source R package for simulating Goal Attainment Scaling data in clinical trials. (\\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/gasr}{GitHub}}.)
+      \\item Created reproducible and efficient ETL pipelines for reading data from multiple sources, processing, validating, exporting, and reporting.
+      \\item Developed internal Shiny dashboards and deployed on AWS for live data monitoring.
+    \\end{itemize}"),
+  "2014-2016", "Teaching Assistant", "Dalhousie University, Department of Physics", "Halifax, NS",
+  c("Aided instruction of Physics students in the undergraduate course \\textit{Introduction to Numerical Programming}.",
+    "Ran weekly Python tutorial and extra help sessions.",
+    "Graded assignments and projects.",
+    "Gave lectures whens professor was absent.")
+) %>%
+  detailed_entries(
+    when = year, with = position, where = location, why = details,
+    what = company,
+    .protect = FALSE
+  )
+  
+```
+
+# Education
+
+```{r}
+tribble(
+  ~ degree, ~ year, ~ institution, ~ location,
+  "MSc Physics", "2014-2016", "Dalhousie University", "Halifax, NS",
+  "BSc Physics, Honours", "2009-2014", "University of Prince Edward Island", "Charlottetown, PE"
 ) %>% 
-  brief_entries(
-    Year, Position, Description
+  detailed_entries(
+    what = degree, when = year, with = institution, where = location
   )
 ```
 
 # Projects
 
 ```{r}
-tribble(
-  ~ project, ~ year, ~ description, ~ link, ~ test,
-  "Canadian COVID-19 dashboard", "2021", "A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada.", "https://taylor-dunn.shinyapps.io/canadacovidshiny/", "test",
-  "Canadian COVID-19 dashboard", "2021", "A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada.", "https://github.com/taylordunn/gasr", "test"
-) %>%
+projects <- tribble(
+  ~ project, ~ year, ~ description, ~ link,
+  "Canadian COVID-19 dashboard", "2022", "A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada.", "\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/canadacovidshiny/}{https://taylor-dunn.shinyapps.io/canadacovidshiny/}",
+  "canadacovid", "2021", "An R package to pull Canadian COVID-19 data from a public API. Published on \\textcolor{tdunn-blue}{\\href{https://cran.r-project.org/web/packages/canadacovid/index.html}{CRAN}}.", "\\color{tdunn-blue}\\href{https://taylordunn.github.io/canadacovid/}{https://taylordunn.github.io/canadacovid/}",
+  "dunnr", "2020", "A personal R package of plotting templates and functions that I commonly use.", "\\color{tdunn-blue}\\href{https://github.com/taylordunn/dunnr}{https://github.com/taylordunn/dunnr}"
+)
+projects %>%
   detailed_entries(
-    with = project, where = link, why = description,
-    what = NA, when = NA,
+    with = project, where = NA, why = description,
+    what = link, when = year,
     .protect = FALSE
   )
 ```
 
-# Test
+# Skills
 
-```{r}
-tibble::tribble(
-  ~what,
-  "\\color{blue}test in blue",
-  "\\href{www.google.com}{www.google.com}",
-  "\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{awesome-pink}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{awesome-skyblue}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{awesome-emerald}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-green}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-red}\\href{https://github.com/taylordunn/gasr}{gasr package}"
-) %>%
-  detailed_entries(
-    what = what,
-    .protect = FALSE
-  )
-```
-
-
-# Brief test
-
-```{r}
+```{r skills-table, results='markup'}
 tribble(
-  ~ what, ~ when, ~ with,
-  "what", "when", "with",
-  "\\color{tdunn-red}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-blue}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-green}\\href{https://github.com/taylordunn/gasr}{gasr package}"
+  ~ Programming, ~ Tools, ~ `Data analysis`,
+  "R: tidyverse, Shiny, ggplot2, RMarkdown, tidymodels \\newline
+  Python: NumPy, Pandas, Seaborn, Scikit-learn \\newline
+  SQL -- Bash -- C",
+  "Git -- Amazon Web Services \\newline
+  Docker -- Google Cloud Platform \\newline
+  GitHub Actions -- Mendeley",
+  "Generalized linear modeling -- Machine learning \\newline
+  Random forest -- Suport-vector machines \\newline
+  K-nearest neighbors -- Principal components analysis
+  Data simulation -- Visualization -- Data scraping"
 ) %>%
-  brief_entries(what, when, with, .protect = FALSE)
-```
-
-# Detailed test
-
-```{r}
-tribble(
-  ~ what, ~ when, ~ with, ~ where, ~ why,
-  "what", "when", "with", "where", "why",
-  "\\color{tdunn-red}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-blue}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-green}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-green}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-  "\\color{tdunn-blue}\\href{https://github.com/taylordunn/gasr}{gasr package}",
-) %>%
-  detailed_entries(what, when, with, where, why, .protect = FALSE)
+  kable(booktabs = TRUE, align = 'c', escape = FALSE, format = "latex") %>%
+  kable_styling(full_width = FALSE, font_size = 8,
+                latex_options = "HOLD_position") %>%
+  row_spec(0, bold = TRUE, font_size = 10, underline = FALSE) %>%
+  row_spec(1, bold = FALSE) %>%
+  column_spec(column = 1, width = "6.3cm") %>%
+  column_spec(column = 2, width = "4.0cm") %>%
+  column_spec(column = 3, width = "6.4cm") %>%
+  # Using regex to remove horizontal lines
+  sub("\\\\toprule", "", .) %>%
+  sub("\\\\midrule", "", .) %>%
+  sub("\\\\bottomrule", "", .)
 ```
 
