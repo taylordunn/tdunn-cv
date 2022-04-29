@@ -34,7 +34,7 @@ library(kableExtra)
 tribble(
   ~ year, ~ position, ~ company, ~ location, ~ details,
   "2017-", "Biostatistician", "Ardea Outcomes", "Halifax, NS",
-  c("Worked on global clincal trials and real-world evidence studies in multiple disease areas. Duties included:
+  c("Worked on global clinical trials and real-world evidence studies in multiple disease areas. Duties included:
     \\begin{itemize}
       \\item Study planning: protocols, statistical analysis plans, data management plans, literature reviews.
       \\item Data management: reporting, transfers, database maintenance, monitoring, queries.
