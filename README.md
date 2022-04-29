@@ -26,3 +26,6 @@ remotes::install_github("nstrayer/datadrivencv#60")
 -   The PDFs from `datadrivencv` are typically very large file size. To
     reduce that size, open in Adobe Acrobat, File -&gt; Save As, and
     select “Reduce File Size.”
+-   Something about the rendering of the `vitae` resume causes a `nul`
+    file to be created. This can’t be deleted as normal in Windows
+    explorer or terminal. Instead, use Git Bash and `rm nul`.
