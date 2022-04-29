@@ -161,7 +161,8 @@
 }
 
 % Custom colors
-\definecolor{tdunn-blue}{HTML}{779ECB}
+%\definecolor{tdunn-blue}{HTML}{779ECB}
+\definecolor{tdunn-blue}{HTML}{2D71AE}
 \definecolor{tdunn-red}{HTML}{D56062}
 \definecolor{tdunn-green}{HTML}{709B81}
 

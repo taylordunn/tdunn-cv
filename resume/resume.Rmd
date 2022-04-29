@@ -1,7 +1,7 @@
 ---
 name: Taylor
 surname: Dunn
-#position: "Professor"
+#position: "Data Scientist"
 address: "Halifax, Nova Scotia"
 #phone: +1 902 940 2210
 www: tdunn.ca
@@ -25,6 +25,8 @@ library(tibble)
 library(knitr)
 library(kableExtra)
 ```
+
+\vspace{-5mm}
 
 # Experience
 
@@ -56,9 +58,7 @@ tribble(
     \\end{itemize}"),
   "2014-2016", "Teaching Assistant", "Dalhousie University, Department of Physics", "Halifax, NS",
   c("Aided instruction of Physics students in the undergraduate course \\textit{Introduction to Numerical Programming}.",
-    "Ran weekly Python tutorial and extra help sessions.",
-    "Graded assignments and projects.",
-    "Gave lectures whens professor was absent.")
+    "Ran weekly Python tutorial sessions, graded assignments and projects, and gave lectures when professor was absent.")
 ) %>%
   detailed_entries(
     when = year, with = position, where = location, why = details,
@@ -86,9 +86,10 @@ tribble(
 ```{r}
 projects <- tribble(
   ~ project, ~ year, ~ description, ~ link,
-  "Canadian COVID-19 dashboard", "2022", "A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada.", "\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/canadacovidshiny/}{https://taylor-dunn.shinyapps.io/canadacovidshiny/}",
-  "canadacovid", "2021", "An R package to pull Canadian COVID-19 data from a public API. Published on \\textcolor{tdunn-blue}{\\href{https://cran.r-project.org/web/packages/canadacovid/index.html}{CRAN}}.", "\\color{tdunn-blue}\\href{https://taylordunn.github.io/canadacovid/}{https://taylordunn.github.io/canadacovid/}",
-  "dunnr", "2020", "A personal R package of plotting templates and functions that I commonly use.", "\\color{tdunn-blue}\\href{https://github.com/taylordunn/dunnr}{https://github.com/taylordunn/dunnr}"
+  "Canadian COVID-19 dashboard", "2022", "A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/canadacovidshiny/}{https://taylor-dunn.shinyapps.io/canadacovidshiny/}",
+  "canadacovid", "2021", "An R package to pull Canadian COVID-19 data from a public API. Published on \\textcolor{tdunn-blue}{\\href{https://cran.r-project.org/web/packages/canadacovid/index.html}{CRAN}}.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylordunn.github.io/canadacovid/}{https://taylordunn.github.io/canadacovid/}",
+  "TidyTuesday dashboard", "2022", "A dashboard built in Shiny compiling tweets for the \\textcolor{tdunn-blue}{\\href{https://github.com/rfordatascience/tidytuesday}{TidyTuesday data project}.}", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}",
+  "dunnr", "2020", "A personal R package of plotting templates and functions that I commonly use.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://github.com/taylordunn/dunnr}{https://github.com/taylordunn/dunnr}"
 )
 projects %>%
   detailed_entries(
