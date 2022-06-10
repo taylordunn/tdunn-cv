@@ -14,7 +14,7 @@ date: "`r format(Sys.time(), '%B %Y')`"
 output: 
   vitae::awesomecv:
     page_total: false
-    show_footer: false
+    #show_footer: false
 ---
 
 ```{r setup, include=FALSE}
@@ -37,7 +37,7 @@ tribble(
   c("Worked on global clinical trials and real-world evidence studies in multiple disease areas. Duties included:
     \\begin{itemize}
       \\item Study planning: protocols, statistical analysis plans, data management plans, literature reviews.
-      \\item Data management: reporting, transfers, database maintenance, monitoring, queries.
+      \\item Data management: reporting, transfers, database monitoring, queries.
       \\item Statistical analysis, interpretation, and presentation of results.
       \\item Project management and communication with industry clients.
     \\end{itemize}",
@@ -86,12 +86,19 @@ tribble(
 ```{r}
 projects <- tribble(
   ~ project, ~ year, ~ description, ~ link,
+  "Halifax bike ridership", "2022",
+  c("An end-to-end machine learning project to predict daily bike ridership in Halifax, Nova Scotia.
+    \\begin{itemize}
+      \\item Deployed on Google Cloud Platform.
+    \\end{itemize}"),
+  "https://github.com/taylordunn/hfx-bike-ridership",
   "Canadian COVID-19 dashboard", "2022", "A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/canadacovidshiny/}{https://taylor-dunn.shinyapps.io/canadacovidshiny/}",
   "canadacovid", "2021", "An R package to pull Canadian COVID-19 data from a public API. Published on \\textcolor{tdunn-blue}{\\href{https://cran.r-project.org/web/packages/canadacovid/index.html}{CRAN}}.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylordunn.github.io/canadacovid/}{https://taylordunn.github.io/canadacovid/}",
   "TidyTuesday dashboard", "2022", "A dashboard built in Shiny compiling tweets for the \\textcolor{tdunn-blue}{\\href{https://github.com/rfordatascience/tidytuesday}{TidyTuesday data project}.}", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}",
   "dunnr", "2020", "A personal R package of plotting templates and functions that I commonly use.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://github.com/taylordunn/dunnr}{https://github.com/taylordunn/dunnr}"
 )
 projects %>%
+  filter(project != "dunnr") %>%
   detailed_entries(
     with = project, where = NA, why = description,
     what = link, when = year,
