@@ -3,7 +3,7 @@ name: Taylor
 surname: Dunn
 #position: "Data Scientist"
 address: "Halifax, Nova Scotia"
-#phone: +1 902 940 2210
+phone: 1 902 940 2210
 www: tdunn.ca
 email: "t.dunn19@gmail.com"
 #twitter: TDunn12
@@ -36,10 +36,9 @@ tribble(
   "2017-", "Biostatistician", "Ardea Outcomes", "Halifax, NS",
   c("Worked on global clinical trials and real-world evidence studies in multiple disease areas. Duties included:
     \\begin{itemize}
-      \\item Study planning: protocols, statistical analysis plans, data management plans, literature reviews.
       \\item Data management: reporting, transfers, database monitoring, queries.
       \\item Statistical analysis, interpretation, and presentation of results.
-      \\item Project management and communication with industry clients.
+      \\item Study planning: protocols, statistical analysis plans, data management plans, literature reviews.
     \\end{itemize}",
     "Conducted patient-centric research, resulting in several peer-reviewed publications and presentations. Examples:
     \\begin{itemize}
@@ -48,12 +47,11 @@ tribble(
       \\item Analyzed neuropsychiatric symptoms reported by over 4000 online users tracking dementia symptoms. (\\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2019/6/e13360/}{Paper}}.)
       \\item Presented public webinars on patient-centric outcomes. (\\textcolor{tdunn-blue}{\\href{https://xtalks.com/webinars/using-goal-attainment-scaling-to-capture-the-patient-voice/}{Xtalks}}, \\textcolor{tdunn-blue}{\\href{https://ardeaoutcomes.com/news/2020/11/ardea-outcomes-launches-goal-attainment-scaling-insights-webinar-series/}{WorkCast}}.)
     \\end{itemize}",
-    "Built the R code infrastructure for many data management activities, saving analysts several hours per week in each project:
+    "Built the R code infrastructure for many data analysis and management activities, saving analysts several hours per week in each project:
     \\begin{itemize}
-      \\item Developed internal R package for interfacing with AWS database and transforming raw clinical trials data into clean tabular data sets.
+      \\item Developed internal R package for interfacing with AWS database and transforming raw clinical trials data into clean data sets and reports.
       \\item Developed internal R package for company-branded figures and RMarkdown reporting templates.
       \\item Developed open-source R package for simulating Goal Attainment Scaling data in clinical trials. (\\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/gasr}{GitHub}}.)
-      \\item Created reproducible and efficient ETL pipelines for reading data from multiple sources, processing, validating, exporting, and reporting.
       \\item Developed internal Shiny dashboards and deployed on AWS for live data monitoring.
     \\end{itemize}"),
   "2014-2016", "Teaching Assistant", "Dalhousie University, Department of Physics", "Halifax, NS",
@@ -86,13 +84,14 @@ tribble(
 ```{r}
 projects <- tribble(
   ~ project, ~ year, ~ description, ~ link,
-  "Halifax bike ridership", "2022",
-  c("An end-to-end machine learning project to predict daily bike ridership in Halifax, Nova Scotia.
-    \\begin{itemize}
-      \\item Deployed on Google Cloud Platform.
-    \\end{itemize}"),
-  "https://github.com/taylordunn/hfx-bike-ridership",
-  "Canadian COVID-19 dashboard", "2022", "A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/canadacovidshiny/}{https://taylor-dunn.shinyapps.io/canadacovidshiny/}",
+  "Predicting bike ridership in Halifax, NS", "2022",
+  c("An end-to-end machine learning project to predict daily bike ridership in Halifax, Nova Scotia, Canada.",
+    "Deployed on Google Cloud Platform as a \\textcolor{tdunn-blue}{\\href{https://hfx-bike-ridership-app-74govvz7xq-uc.a.run.app/}{Shiny dashboard}} and a \\textcolor{tdunn-blue}{\\href{https://hfx-bike-ridership-api-74govvz7xq-uc.a.run.app/__docs__/}{REST API}}.",
+    "Wrote about the steps taken in a three part series: \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2022-04-27-predicting-bike-ridership-getting-the-data/}{retrieving the data}}, \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2022-04-29-predicting-bike-ridership-developing-a-model/}{developing and evaluating models}}, and \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2022-05-19-predicting-bike-ridership-deploying-the-model/}{putting the model into production}}."),
+  "\\bodyfontlight\\color{tdunn-blue}\\href{https://github.com/taylordunn/hfx-bike-ridership}{https://github.com/taylordunn/hfx-bike-ridership}",
+  "Canadian COVID-19 dashboard", "2021",
+  c("A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada."),
+  "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/canadacovidshiny/}{https://taylor-dunn.shinyapps.io/canadacovidshiny/}",
   "canadacovid", "2021", "An R package to pull Canadian COVID-19 data from a public API. Published on \\textcolor{tdunn-blue}{\\href{https://cran.r-project.org/web/packages/canadacovid/index.html}{CRAN}}.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylordunn.github.io/canadacovid/}{https://taylordunn.github.io/canadacovid/}",
   "TidyTuesday dashboard", "2022", "A dashboard built in Shiny compiling tweets for the \\textcolor{tdunn-blue}{\\href{https://github.com/rfordatascience/tidytuesday}{TidyTuesday data project}.}", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}",
   "dunnr", "2020", "A personal R package of plotting templates and functions that I commonly use.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://github.com/taylordunn/dunnr}{https://github.com/taylordunn/dunnr}"
