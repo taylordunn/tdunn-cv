@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 
 # tdunn-cv
 
-My CV, built using the `datadrivencv` package, and my resume, build using the `vitae` package.
+My CV, built using the `datadrivencv` package, and my resume, built using the `vitae` package.
 
 
 ## Notes
