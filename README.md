@@ -3,7 +3,7 @@
 
 # tdunn-cv
 
-My CV, built using the `datadrivencv` package, and my resume, build
+My CV, built using the `datadrivencv` package, and my resume, built
 using the `vitae` package.
 
 ## Notes
@@ -24,7 +24,7 @@ remotes::install_github("nstrayer/datadrivencv#60")
     produce a shorter resume document. See [this
     issue](https://github.com/nstrayer/datadrivencv/issues/30).
 -   The PDFs from `datadrivencv` are typically very large file size. To
-    reduce that size, open in Adobe Acrobat, File -&gt; Save As, and
+    reduce that size, open in Adobe Acrobat, File -\> Save As, and
     select “Reduce File Size.”
 -   Something about the rendering of the `vitae` resume causes a `nul`
     file to be created. This can’t be deleted as normal in Windows
