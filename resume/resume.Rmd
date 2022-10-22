@@ -1,9 +1,7 @@
 ---
 name: Taylor
 surname: Dunn
-#position: "Data Scientist"
 address: "Halifax, Nova Scotia"
-phone: 1 902 940 2210
 www: tdunn.ca
 email: "t.dunn19@gmail.com"
 #twitter: TDunn12
@@ -33,24 +31,20 @@ library(kableExtra)
 ```{r}
 tribble(
   ~ year, ~ position, ~ company, ~ location, ~ details,
-  "2017-", "Biostatistician", "Ardea Outcomes", "Halifax, NS",
-  c("Worked on global clinical trials and real-world evidence studies in multiple disease areas. Duties included:
-    \\begin{itemize}
-      \\item Data management: reporting, transfers, database monitoring, queries.
-      \\item Statistical analysis, interpretation, and presentation of results.
-      \\item Study planning: protocols, statistical analysis plans, data management plans, literature reviews.
-    \\end{itemize}",
+  "2022-", "Data Science Analyst", "Yelp", "Remote",
+  c("Design and analyze online experiments core to the Yelp platform.",
+    "Interpret and present results to key stakeholders, and aid them in making data-driven decisions."),
+  "2017-2022", "Biostatistician", "Ardea Outcomes", "Halifax, NS",
+  c("Worked on global clinical trials in multiple disease areas. Duties included: study planning, statistical analysis, and data management.",
     "Conducted patient-centric research, resulting in several peer-reviewed publications and presentations. Examples:
     \\begin{itemize}
       \\item Developed a machine learning model to predict patient dementia stage, achieving 83\\% balanced accuracy. (\\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2020/11/e20840}{Paper 1}}, \\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2022/1/e29219}{paper 2}}.)
       \\item Used data simulations to investigate statistical properties of the Goal Attainment Scaling outcome measure. (\\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/isoqol2021-gas-sim}{Project 1}}, \\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/ispor-europe2021-gas-sim}{project 2}}.)
       \\item Analyzed neuropsychiatric symptoms reported by over 4000 online users tracking dementia symptoms. (\\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2019/6/e13360/}{Paper}}.)
-      \\item Presented public webinars on patient-centric outcomes. (\\textcolor{tdunn-blue}{\\href{https://xtalks.com/webinars/using-goal-attainment-scaling-to-capture-the-patient-voice/}{Xtalks}}, \\textcolor{tdunn-blue}{\\href{https://ardeaoutcomes.com/news/2020/11/ardea-outcomes-launches-goal-attainment-scaling-insights-webinar-series/}{WorkCast}}.)
     \\end{itemize}",
     "Built the R code infrastructure for many data analysis and management activities, saving analysts several hours per week in each project:
     \\begin{itemize}
       \\item Developed internal R package for interfacing with AWS database and transforming raw clinical trials data into clean data sets and reports.
-      \\item Developed internal R package for company-branded figures and RMarkdown reporting templates.
       \\item Developed open-source R package for simulating Goal Attainment Scaling data in clinical trials. (\\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/gasr}{GitHub}}.)
       \\item Developed internal Shiny dashboards and deployed on AWS for live data monitoring.
     \\end{itemize}"),
@@ -111,7 +105,7 @@ projects %>%
 tribble(
   ~ Programming, ~ Tools, ~ `Data analysis`,
   "R: tidyverse, Shiny, ggplot2, RMarkdown, tidymodels \\newline
-  Python: NumPy, Pandas, Seaborn, Scikit-learn \\newline
+  Python: NumPy, Pandas, Scikit-learn, Jupyter \\newline
   SQL -- Bash -- C",
   "Git -- Amazon Web Services \\newline
   Docker -- Google Cloud Platform \\newline
