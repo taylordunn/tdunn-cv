@@ -4,7 +4,6 @@ surname: Dunn
 address: "Halifax, Nova Scotia"
 www: tdunn.ca
 email: "t.dunn19@gmail.com"
-#twitter: TDunn12
 headcolor: 779ECB
 github: taylordunn
 linkedin: dunn-taylor
@@ -12,7 +11,7 @@ date: "`r format(Sys.time(), '%B %Y')`"
 output: 
   vitae::awesomecv:
     page_total: false
-    #show_footer: false
+    show_footer: false
 ---
 
 ```{r setup, include=FALSE}
@@ -31,7 +30,7 @@ library(kableExtra)
 ```{r}
 tribble(
   ~ year, ~ position, ~ company, ~ location, ~ details,
-  "2022-", "Data Science Analyst", "Yelp", "Remote",
+  "2022-", "Data Scientist, Product Analytics", "Yelp", "Remote",
   c("Design and analyze online experiments core to the Yelp platform.",
     "Interpret and present results to key stakeholders, and aid them in making data-driven decisions."),
   "2017-2022", "Biostatistician", "Ardea Outcomes", "Halifax, NS",
