@@ -23,16 +23,17 @@ library(knitr)
 library(kableExtra)
 ```
 
-\vspace{-5mm}
 
 # Experience
 
 ```{r}
 tribble(
   ~ year, ~ position, ~ company, ~ location, ~ details,
-  "2022-", "Data Scientist, Product Analytics", "Yelp", "Remote",
-  c("Design and analyze online experiments core to the Yelp platform.",
-    "Interpret and present results to key stakeholders, and aid them in making data-driven decisions."),
+  "2022-", "Data Scientist, Ads", "Yelp", "Remote",
+  c("Led experimentation across multiple ads product teams by designing, analyzing, interpreting, and communicating results of A/B tests and geo experiments.",
+    "Built reusable analytic tools in Python that standardized and automated post-experiment reporting, improving consistency and reducing analyst effort across teams.",
+    "Designed and executed causal analyses to distinguish correlation from true drivers of advertiser retention, guiding investment prioritization.",
+    "Mentored junior data scientists, developing their ads domain expertise and ensuring high standards in experimentation design, statistical methodology, and code quality."),
   "2017-2022", "Biostatistician", "Ardea Outcomes", "Halifax, NS",
   c("Worked on global clinical trials in multiple disease areas. Duties included: study planning, statistical analysis, and data management.",
     "Conducted patient-centric research, resulting in several peer-reviewed publications and presentations. Examples:
@@ -41,12 +42,7 @@ tribble(
       \\item Used data simulations to investigate statistical properties of the Goal Attainment Scaling outcome measure. (\\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/isoqol2021-gas-sim}{Project 1}}, \\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/ispor-europe2021-gas-sim}{project 2}}.)
       \\item Analyzed neuropsychiatric symptoms reported by over 4000 online users tracking dementia symptoms. (\\textcolor{tdunn-blue}{\\href{https://www.jmir.org/2019/6/e13360/}{Paper}}.)
     \\end{itemize}",
-    "Built the R code infrastructure for many data analysis and management activities, saving analysts several hours per week in each project:
-    \\begin{itemize}
-      \\item Developed internal R package for interfacing with AWS database and transforming raw clinical trials data into clean data sets and reports.
-      \\item Developed open-source R package for simulating Goal Attainment Scaling data in clinical trials. (\\textcolor{tdunn-blue}{\\href{https://github.com/taylordunn/gasr}{GitHub}}.)
-      \\item Developed internal Shiny dashboards and deployed on AWS for live data monitoring.
-    \\end{itemize}"),
+    "Built the R code infrastructure for many data analysis and management activities, saving analysts several hours per week in each project."),
   "2014-2016", "Teaching Assistant", "Dalhousie University, Department of Physics", "Halifax, NS",
   c("Aided instruction of Physics students in the undergraduate course \\textit{Introduction to Numerical Programming}.",
     "Ran weekly Python tutorial sessions, graded assignments and projects, and gave lectures when professor was absent.")
@@ -83,14 +79,13 @@ projects <- tribble(
     "Wrote about the steps taken in a three part series: \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2022-04-27-predicting-bike-ridership-getting-the-data/}{retrieving the data}}, \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2022-04-29-predicting-bike-ridership-developing-a-model/}{developing and evaluating models}}, and \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2022-05-19-predicting-bike-ridership-deploying-the-model/}{putting the model into production}}."),
   "\\bodyfontlight\\color{tdunn-blue}\\href{https://github.com/taylordunn/hfx-bike-ridership}{https://github.com/taylordunn/hfx-bike-ridership}",
   "Canadian COVID-19 dashboard", "2021",
-  c("A dashboard built in Shiny that reports and visualizes the latest COVID-19 numbers in Canada."),
+  c("A dashboard built in Shiny that reported and visualized the latest COVID-19 numbers in Canada.",
+    "For daily data updates, created an R package (\\textcolor{tdunn-blue}{\\href{https://taylordunn.github.io/canadacovid/}{canadacovid}}) to pull the latest data from a public API, which was published on CRAN.",
+    "Wrote about the process in a three part series: \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2021-12-28-canada-covid-19-data-in-r-exploring-the-api/}{exploring the data}}, \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2021-12-30-canada-covid-19-data-in-r-creating-a-package/}{creating the package}}, and \\textcolor{tdunn-blue}{\\href{https://tdunn.ca/posts/2022-01-22-canada-covid-19-data-in-r-scheduling-api-queries/}{scheduling data queries}}."),
   "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/canadacovidshiny/}{https://taylor-dunn.shinyapps.io/canadacovidshiny/}",
-  "canadacovid", "2021", "An R package to pull Canadian COVID-19 data from a public API. Published on \\textcolor{tdunn-blue}{\\href{https://cran.r-project.org/web/packages/canadacovid/index.html}{CRAN}}.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylordunn.github.io/canadacovid/}{https://taylordunn.github.io/canadacovid/}",
-  "TidyTuesday dashboard", "2022", "A dashboard built in Shiny compiling tweets for the \\textcolor{tdunn-blue}{\\href{https://github.com/rfordatascience/tidytuesday}{TidyTuesday data project}.}", "\\bodyfontlight\\color{tdunn-blue}\\href{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}{https://taylor-dunn.shinyapps.io/tidytuesday-dashboard/}",
-  "dunnr", "2020", "A personal R package of plotting templates and functions that I commonly use.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://github.com/taylordunn/dunnr}{https://github.com/taylordunn/dunnr}"
+  #"dunnr", "2020", "A personal R package of plotting templates and functions that I commonly use.", "\\bodyfontlight\\color{tdunn-blue}\\href{https://github.com/taylordunn/dunnr}{https://github.com/taylordunn/dunnr}"
 )
 projects %>%
-  filter(project != "dunnr") %>%
   detailed_entries(
     with = project, where = NA, why = description,
     what = link, when = year,
@@ -103,16 +98,15 @@ projects %>%
 ```{r skills-table, results='markup'}
 tribble(
   ~ Programming, ~ Tools, ~ `Data analysis`,
-  "R: tidyverse, Shiny, ggplot2, RMarkdown, tidymodels \\newline
-  Python: NumPy, Pandas, Scikit-learn, Jupyter \\newline
-  SQL -- Bash -- C",
+  "Python: Pandas, Scikit-learn, Pyspark \\newline
+  R: tidyverse, Shiny, ggplot2, Quarto, tidymodels \\newline
+  SQL -- Bash",
   "Git -- Amazon Web Services \\newline
-  Docker -- Google Cloud Platform \\newline
-  GitHub Actions -- Mendeley",
-  "Generalized linear modeling -- Machine learning \\newline
-  Random forest -- Suport-vector machines \\newline
-  K-nearest neighbors -- Principal components analysis
-  Data simulation -- Visualization -- Data scraping"
+  Spark -- Docker \\newline
+  Google Cloud Platform",
+  "A/B testing -- Geo experimentation \\newline
+  Power analysis -- Difference-in-difference \\newline
+  Propensity score matching -- Machine learning"
 ) %>%
   kable(booktabs = TRUE, align = 'c', escape = FALSE, format = "latex") %>%
   kable_styling(full_width = FALSE, font_size = 8,
